@@ -1356,7 +1356,7 @@ Optional Features and Packages:
   --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
   --with-libdir=NAME      Look for libraries in .../NAME rather than .../lib
   --with-php-config=PATH  Path to php-config php-config
- --enable-sample        Enable "sample" extension support
+  --enable-sample        Enable "sample" extension support
   --enable-shared[=PKGS]  build shared libraries [default=yes]
   --enable-static[=PKGS]  build static libraries [default=yes]
   --with-pic[=PKGS]       try to use only PIC/non-PIC objects [default=use
@@ -2312,14 +2312,14 @@ EOF
   fi
   for arg in $ac_configure_args; do
     if test `expr -- $arg : "'.*"` = 0; then
-      if test `expr -- $arg : "-.*"` = 0 && test `expr -- $arg : ".*=.*"` = 0; then
-        continue;
+      if test `expr -- $arg : "--.*"` = 0; then
+        break;
       fi
       echo "'$arg' \\" >> config.nice
       CONFIGURE_OPTIONS="$CONFIGURE_OPTIONS '$arg'"
     else
-      if test `expr -- $arg : "'-.*"` = 0 && test `expr -- $arg : "'.*=.*"` = 0; then
-        continue;
+      if test `expr -- $arg : "'--.*"` = 0; then
+        break;
       fi
       echo "$arg \\" >> config.nice
       CONFIGURE_OPTIONS="$CONFIGURE_OPTIONS $arg"
@@ -3884,7 +3884,6 @@ esac
 
 { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ext_output" >&5
 $as_echo "$ext_output" >&6; }
-
 
 
 

@@ -1,5 +1,5 @@
-sample.lo: /usr/lib/php5/20131226/sample/sample.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/usr/lib/php5/20131226/sample $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /usr/lib/php5/20131226/sample/sample.c -o sample.lo 
+sample.lo: /usr/lib/php5/20121212/sample/sample.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/usr/lib/php5/20121212/sample $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /usr/lib/php5/20121212/sample/sample.c -o sample.lo 
 $(phplibdir)/sample.la: ./sample.la
 	$(LIBTOOL) --mode=install cp ./sample.la $(phplibdir)
 
